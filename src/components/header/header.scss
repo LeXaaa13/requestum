@@ -1,0 +1,42 @@
+.header {
+  max-width: 90%;
+  max-height: 120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+  border-bottom: 1px solid #ccca7c;
+
+  &-left {
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+      margin-left: 20px;
+    }
+
+    .company-name {
+      color: #ccca7c;
+      margin: 0;
+      line-height: 32px;
+      font-size: 35px;
+      font-family: 'Comfortaa', cursive;;
+    }
+
+    .company-description {
+      color: #ccca7c;
+      margin: 0;
+      margin-top: 5px;
+      font-weight: normal;
+    }
+  }
+
+  &-right {
+    .project-name {
+      color: #ccca7c;
+      margin: 0;
+      font-weight: normal;
+    }
+  }
+}

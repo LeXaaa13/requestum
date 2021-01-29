@@ -1,0 +1,42 @@
+.card {
+  width: 45%;
+  max-height: calc(150px - 40px);
+  background-color: #fff;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  padding: 20px;
+
+  &:nth-child(odd) {
+    margin-right: 20px
+  }
+
+  &-title {
+    margin: 0;
+  }
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    &:first-of-type {
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &-subtitle {
+    margin: 0;
+
+    &:first-of-type {
+      min-width: 100px;
+    }
+
+    &:last-of-type {
+      max-width: 600px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
