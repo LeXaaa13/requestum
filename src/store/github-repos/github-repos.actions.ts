@@ -1,4 +1,5 @@
 import { createAsyncAction } from 'typesafe-actions';
+import {IGithubReposRes} from "../../models/github-repos/github-repos";
 
 enum GITHUB_REPOS_ACTIONS_TYPE {
     GET_REPOS_REQUEST = 'GET_REPOS_REQUEST',
@@ -16,7 +17,7 @@ export const getReposActions = createAsyncAction(
     GITHUB_REPOS_ACTIONS_TYPE.GET_REPOS_REQUEST,
     GITHUB_REPOS_ACTIONS_TYPE.GET_REPOS_SUCCESS,
     GITHUB_REPOS_ACTIONS_TYPE.GET_REPOS_FAILURE
-)<void, any, string>();
+)<void, IGithubReposRes[], string>();
 
 export const searchReposActions = createAsyncAction(
     GITHUB_REPOS_ACTIONS_TYPE.SEARCH_REPOS_REQUEST,
@@ -28,4 +29,4 @@ export const getSearchReposHistoryActions = createAsyncAction(
     GITHUB_REPOS_ACTIONS_TYPE.GET_SEARCH_REPOS_HISTORY_REQUEST,
     GITHUB_REPOS_ACTIONS_TYPE.GET_SEARCH_REPOS_HISTORY_SUCCESS,
     GITHUB_REPOS_ACTIONS_TYPE.GET_SEARCH_REPOS_HISTORY_FAILURE
-)<void, any, string>();
+)<void, string[], string>();

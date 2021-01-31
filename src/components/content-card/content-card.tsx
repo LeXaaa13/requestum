@@ -2,22 +2,22 @@ import React from "react";
 import './content-card.scss'
 
 interface IProps {
-    title: string;
-    lang: string;
-    desc: string | null;
+    name: string;
+    language: string;
+    description: string | null;
 }
 
-export const ContentCard: React.FC<IProps> = ({title, lang, desc}) => {
+export const ContentCard: React.FC<IProps> = ({name, language, description}) => {
     return (
         <div className='card'>
-            <h2 className='card-title'>{title}</h2>
+            <h2 className='card-title'>{name}</h2>
             <div className='card-wrapper'>
                 <p className='card-subtitle'>Language: </p>
-                <p className='card-subtitle'>{lang}</p>
+                <p className='card-subtitle'>{language}</p>
             </div>
             <div className='card-wrapper'>
                 <p className='card-subtitle'>Description: </p>
-                <p className='card-subtitle'>{desc ? desc : 'No description'}</p>
+                <p className='card-subtitle'>{description ? description : 'No description'}</p>
             </div>
         </div>
     )

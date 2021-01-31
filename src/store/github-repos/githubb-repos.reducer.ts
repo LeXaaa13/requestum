@@ -1,11 +1,12 @@
+import { IGithubReposBase } from 'models/github-repos/github-repos';
 import {ActionType, createReducer} from 'typesafe-actions';
 import {getReposActions, searchReposActions, getSearchReposHistoryActions} from './github-repos.actions';
 
 export interface IGithubReposState {
     isLoading: boolean;
-    originalData: any;
-    filteredData: any;
-    searchHistory: any;
+    originalData: IGithubReposBase[] | null;
+    filteredData: IGithubReposBase[] | null;
+    searchHistory: string[] | null;
     error: string | null;
 }
 
@@ -34,16 +35,16 @@ export const githubReposReducer = createReducer<IGithubReposState, GithubReposAc
             isLoading: false,
             originalData: action.payload.map((item: any) => {
                 return {
-                    title: item.name,
-                    lang: item.language,
-                    desc: item.description
+                    name: item.name,
+                    language: item.language,
+                    description: item.description
                 }
             }),
             filteredData: action.payload.map((item: any) => {
                 return {
-                    title: item.name,
-                    lang: item.language,
-                    desc: item.description
+                    name: item.name,
+                    language: item.language,
+                    description: item.description
                 }
             })
         })
@@ -71,10 +72,10 @@ export const githubReposReducer = createReducer<IGithubReposState, GithubReposAc
         (state, action): IGithubReposState => ({
             ...state,
             isLoading: false,
-            filteredData: state.originalData.filter((item: any) => {
+            filteredData: state.originalData && state.originalData.filter((item) => {
                 if (
-                    item.title.toLowerCase().includes(action.payload.toLowerCase()) ||
-                    item.lang.toLowerCase().includes(action.payload.toLowerCase())
+                    item.name.toLowerCase().includes(action.payload.toLowerCase()) ||
+                    item.language.toLowerCase().includes(action.payload.toLowerCase())
                 ) return item;
             })
         })

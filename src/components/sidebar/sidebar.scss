@@ -1,12 +1,23 @@
 .sidebar {
+  max-width: 200px;
   height: 100%;
   margin-right: 50px;
 
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 50px;
+  }
+
   &-input {
+    width: 160px;
+    padding: 7px 20px;
     border: none;
     border-radius: 20px;
-    padding: 7px 20px;
-    width: 160px;
+
+    @media only screen and (max-width: 600px) {
+      width: calc(100% - 40px);
+    }
 
     &:focus {
       outline: none;

@@ -2,7 +2,7 @@ import React from "react";
 import './sidebar.scss'
 
 interface IProps {
-    history: string[];
+    history: string[] | null;
     search: string;
     setSearch: (value: string) => void;
 }

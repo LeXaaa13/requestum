@@ -1,13 +1,29 @@
 .card {
-  width: 45%;
+  width: calc(49% - 40px);
   max-height: calc(150px - 40px);
   background-color: #fff;
   border-radius: 20px;
   margin-bottom: 30px;
   padding: 20px;
 
+  @media only screen and (max-width: 1440px) {
+    width: calc(48% - 40px);
+  }
+
+  @media only screen and (max-width: 1200px) {
+    width: calc(100% - 40px);
+  }
+
+  @media only screen and (max-width: 1200px) {
+    width: calc(100% - 40px);
+  }
+
   &:nth-child(odd) {
-    margin-right: 20px
+    margin-right: 20px;
+
+    @media only screen and (max-width: 1200px) {
+      margin-right: 0;
+    }
   }
 
   &-title {
@@ -33,7 +49,6 @@
     }
 
     &:last-of-type {
-      max-width: 600px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
